@@ -1,0 +1,54 @@
+<div class="menu-container" id="menu">
+
+  <!-- LEFT SIDEBAR -->
+  <div class="menu-sidebar">
+
+    <h3 class="menu-title">MENU</h3>
+
+    <ul>
+      <li
+        *ngFor="let cat of categories"
+        [class.active]="selectedCategory === cat"
+        (click)="selectCategory(cat)"
+      >
+        {{ cat }}
+      </li>
+    </ul>
+
+  </div>
+
+
+  <!-- RIGHT CONTENT -->
+  <div class="menu-content">
+
+    <h2>{{ selectedCategory }}</h2>
+
+    <!-- BOOTSTRAP GRID -->
+    <div class="row g-3">
+
+      <div
+        class="col-6 col-md-4 col-lg-2"
+        *ngFor="let item of filteredItems"
+      >
+
+        <div class="menu-card">
+
+          <img [src]="item.image" class="img-fluid" />
+
+          <div class="menu-info">
+
+            <h4>{{ item.name }}</h4>
+
+            <p *ngIf="!isMobile">{{ item.desc }}</p>
+ 
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

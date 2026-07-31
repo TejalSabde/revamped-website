@@ -1,0 +1,167 @@
+/* MAIN CONTAINER */
+
+.menu-container {
+  display: flex;
+  gap: 30px;
+  padding: 40px 20px;
+  /* background: #fafafa; */
+}
+
+
+/* SIDEBAR */
+
+.menu-sidebar {
+  width: 240px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.menu-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f4b400;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.menu-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-sidebar li {
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.menu-sidebar li:hover {
+  background: #f4b40020;
+}
+
+.menu-sidebar li.active {
+  background: #f4b400;
+  color: white;
+}
+
+
+/* CONTENT AREA */
+
+.menu-content {
+  flex: 1;
+}
+
+.menu-content h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+
+/* CARD */
+
+.menu-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  cursor: pointer;
+  height: 100%;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+}
+
+
+.menu-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+
+.menu-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.menu-info h4 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.menu-info p {
+  font-size: 12px;
+  color: #666;
+}
+
+
+/* ============================= */
+/* MOBILE VIEW */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  /* Reverse Layout */
+  /* .menu-container {
+    flex-direction: row-reverse;
+  } */
+
+  /* Sidebar on Right */
+  .menu-sidebar {
+    width: 120px;
+    padding: 12px;
+  }
+
+  .menu-title {
+    font-size: 16px;
+  }
+
+  .menu-sidebar li {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  /* Grid Area */
+  .menu-content h2 {
+    font-size: 20px;
+  }
+
+}
+
+/* ============================= */
+/* SQUARE IMAGES ON MOBILE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .menu-card img {
+    aspect-ratio: 1 / 1;
+    /* Makes it square */
+    height: auto;
+    /* Let aspect-ratio control height */
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .menu-card img {
+    aspect-ratio: 1 / 1;
+  }
+
+  .menu-info h4 {
+    font-size: 14px;
+  }
+
+  .menu-info p {
+    font-size: 11px;
+  }
+
+}

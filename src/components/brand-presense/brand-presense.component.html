@@ -1,0 +1,136 @@
+<section class="journey-section" id="brandPresence">
+    <div class="container">
+
+        <!-- Optional very light decorative corner images -->
+        <!-- Replace these only if you want extra texture -->
+        <!-- <img src="background.jpg" class="corner-fade corner-top-right" alt=""> -->
+        <!-- <img src="background.jpg" class="corner-fade corner-bottom-left" alt=""> -->
+
+        <!-- Curved route line -->
+         <div class="section-title">
+          <h2 class="text-yellow">Brand Presence</h2>
+        </div>
+        <svg class="route-line" viewBox="0 0 1200 1600" preserveAspectRatio="none">
+            <path d="M880,80
+                 C1090,170 1030,320 770,370
+                 C470,430 160,470 250,690
+                 C340,920 980,780 960,1030
+                 C940,1280 310,1150 270,1380
+                 C250,1490 420,1540 650,1520" />
+            <circle class="stop-dot" cx="880" cy="80" r="6" />
+            <circle class="stop-dot" cx="250" cy="690" r="6" />
+            <circle class="stop-dot" cx="960" cy="1030" r="6" />
+            <circle class="stop-dot" cx="650" cy="1520" r="6" />
+        </svg>
+
+        <div class="journey-list">
+
+            <!-- Thane -->
+            <div class="journey-item reverse">
+                <div class="journey-image">
+                    <img src="../../assets/img/locations/thane.png" alt="Thane" />
+                </div>
+                <div class="journey-content">
+                    <!-- <h2>Thane</h2> -->
+                    <div class="outlets-card">
+                        <!-- <p class="card-title">{{ title }}</p> -->
+
+                        <div class="row">
+                            <div class="col-12 col-md-4 mb-2" *ngFor="let location of thaneLocations">
+                                <div class="location-item">
+                                    <!-- <span class="pin">📍</span> -->
+                                    <img src="../../assets/img/locations/pin.png" alt="Location Pin" class="pin" />
+                                    <a [href]="location.link" target="_blank" rel="noopener noreferrer"
+                                        class="location-link">
+                                        {{ location.name }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <p>
+                        Discover the vibrant spirit of Thane with its modern lifestyle,
+                        scenic lakes, and growing food culture.
+                    </p>
+                    <p class="meta">Popular destination • Urban charm • Great connectivity</p> -->
+                </div>
+            </div>
+
+            <!-- Mumbai -->
+            <div class="journey-item">
+                <div class="journey-image">
+                    <img src="../../assets/img/locations/mumbai.png" alt="Mumbai" />
+                </div>
+                <div class="journey-content">
+                   <div class="outlets-card">
+                        <!-- <p class="card-title">{{ title }}</p> -->  
+
+                        <div class="row">
+                            <div class="col-12 col-md-4 mb-2" *ngFor="let location of mumbaiLocations">
+                                <div class="location-item">
+                                    <!-- <span class="pin">📍</span> -->
+                                    <img src="../../assets/img/locations/pin.png" alt="Location Pin" class="pin" />
+                                    <a [href]="location.link" target="_blank" rel="noopener noreferrer"
+                                        class="location-link">
+                                        {{ location.name }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+
+            <!-- Navi Mumbai -->
+            <div class="journey-item reverse">
+                <div class="journey-image">
+                    <img src="../../assets/img/locations/navi-mumbai.png" alt="Navi Mumbai" />
+                </div>
+                <div class="journey-content">
+                <div class="outlets-card">
+                        <!-- <p class="card-title">{{ title }}</p> -->
+
+                        <div class="row">
+                            <div class="col-12 col-md-4 mb-2" *ngFor="let location of naviMumbaiLocations">
+                                <div class="location-item">
+                                    <!-- <span class="pin">📍</span> -->
+                                    <img src="../../assets/img/locations/pin.png" alt="Location Pin" class="pin" />
+                                    <a [href]="location.link" target="_blank" rel="noopener noreferrer"
+                                        class="location-link">
+                                        {{ location.name }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+
+            <!-- Pune -->
+            <div class="journey-item">
+                <div class="journey-image">
+                    <img src="../../assets/img/locations/pune.png" alt="Pune" />
+                </div>
+                <div class="journey-content">
+                <div class="outlets-card">
+                        <!-- <p class="card-title">{{ title }}</p> -->
+
+                        <div class="row">
+                            <div class="col-12 col-md-4 mb-2" *ngFor="let location of puneLocations">
+                                <div class="location-item">
+                                    <!-- <span class="pin">📍</span> -->
+                                    <img src="../../assets/img/locations/pin.png" alt="Location Pin" class="pin" />
+                                    <a [href]="location.link" target="_blank" rel="noopener noreferrer"
+                                        class="location-link">
+                                        {{ location.name }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

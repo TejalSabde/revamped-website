@@ -1,0 +1,88 @@
+<div id="home">
+
+  <!-- HERO -->
+  <div id="home" [ngClass]="{
+    'mobile-hero': isMobile,
+    'hero-container': !isMobile
+  }">
+
+
+    <!-- Background -->
+    <div class="hero-bg"></div>
+
+
+    <!-- Content -->
+    <div [ngClass]="{
+    'mobile-hero-content': isMobile,
+    'hero-content': !isMobile
+  }" [ngStyle]="{
+    transform:'scale(' + (isMobile ? mobileScale : heroScale) + ')',
+    opacity: heroOpacity
+  } ">
+
+      <!-- Desktop Image -->
+      <div [ngClass]="{
+    'mobile-bg': isMobile,
+    'desktop-bg': !isMobile
+  }"></div>
+
+
+      <!-- Text -->
+      <div class=" fade-in-right" [ngClass]="{
+    'desktop-hero-text hero-text': !isMobile
+  }">
+
+
+        <h4 [ngClass]="{
+    'mobile-subtitle': isMobile,
+    'subtitle': !isMobile
+  }">
+          Savory
+        </h4>
+
+        <h1 [ngClass]="{
+    'mobile-title': isMobile,
+    'title': !isMobile
+  }">
+          Shawarma Like Never Before
+        </h1>
+
+        <p [ngClass]="{
+    'mobile-desc': isMobile,
+    'description': !isMobile
+  }">
+          Freshly grilled, expertly crafted shawarmas,
+          bursting with authentic flavors and passion.
+        </p>
+
+        <!-- Button (Desktop Only Optional) -->
+        <button class="brochure-btn" *ngIf="!isMobile" (click)="downloadBrochure()">
+          Download Brochure
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Scroll Icon -->
+    <div class="scroll-down">
+      ↓
+    </div>
+
+  </div>
+
+
+  <!-- MAIN CONTENT -->
+  <div id="main">
+
+    <!-- <app-location-bar></app-location-bar> -->
+    <app-menu></app-menu>
+    <!-- <app-awards></app-awards> -->
+    <app-growth-story></app-growth-story>
+    <app-brand-presense></app-brand-presense>
+    <app-about-us></app-about-us>
+    <app-team></app-team>
+
+  </div>
+
+</div>

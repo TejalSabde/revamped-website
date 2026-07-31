@@ -1,0 +1,311 @@
+.location-link {
+    color: inherit;           /* Same color as normal text */
+    text-decoration: none;    /* No underline */
+    font: inherit;            /* Same font, size, weight */
+    cursor: pointer;          /* Optional: keep pointer on hover */
+}
+
+.location-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
+/* SECTION BACKGROUND */
+.section-bg {
+  background: radial-gradient(circle at center, #111 0%, #000 70%);
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.s-curve-container {
+  position: relative;
+  background: #fafafa; /* The soft pink from your image */
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+
+/* Common styles for the curve wrappers */
+.curve-top, .curve-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.curve-top {
+  top: 0;
+}
+
+.curve-bottom {
+  bottom: 0;
+  transform: rotate(180deg); /* Flips the wave to face downward */
+}
+
+.curve-top svg, .curve-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px; /* Adjust this to make the curve deeper or shallower */
+}
+
+/* This color must match your outer background color (e.g., white) */
+.curve-top .shape-fill, 
+.curve-bottom .shape-fill {
+  fill: #FFFFFF; 
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* MAIN CONTAINER */
+.growth-container {
+  position: relative;
+  height: 520px;
+  width: 100%;
+}
+
+/* COMMON IMAGE STYLE */
+.growth-container img {
+  position: absolute;
+  filter: drop-shadow(0 0 25px rgba(243, 179, 24, 0.7));
+  transition: transform 0.4s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* TRUCK */
+.image1 {
+  bottom: 0;
+  left: 20px;
+  width: 220px;
+  z-index: 3;
+}
+
+/* OUTLET */
+.image2 {
+  top: 30px;
+  right: 10px;
+  width: 320px;
+  z-index: 3;
+}
+
+/* FLOATING ANIMATION */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* SVG LINE */
+.line {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+/* PATH */
+.path {
+  stroke: #f3b318;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 10px #f3b318);
+}
+
+/* ARROW */
+.new-path {
+  offset-path: path('M220 500 Q 380 460, 320 320 T 350 150');
+  offset-distance: 0%;
+  animation: move-arrow 3s linear infinite;
+  filter: drop-shadow(0 0 10px #f3b318);
+}
+
+/* ARROW ANIMATION */
+@keyframes move-arrow {
+  from {
+    offset-distance: 0%;
+  }
+
+  to {
+    offset-distance: 100%;
+  }
+}
+
+/* CONTENT */
+.content {
+  /* color: #eee; */
+  font-size: 17px;
+  letter-spacing: 0.5px;
+}
+
+/* ACCORDION CARDS */
+.accordion-list li {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  /* border: 1px solid rgba(243, 179, 24, 0.2); */
+  transition: 0.3s;
+}
+
+.accordion-list li:hover {
+  box-shadow: 0 0 15px rgba(243, 179, 24, 0.3);
+}
+
+/* TIMELINE CARDS */
+.timeline-panel {
+  /* background: #0e0e0e; */
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid rgb(243 179 24 / 53%);
+  box-shadow: inset 0 0 10px rgba(243, 179, 24, 0.1);
+}
+
+/* TIMELINE TEXT */
+.timeline-title {
+  color: #f3b318;
+  margin-bottom: 4px;
+}
+
+.timeline-body p {
+  /* color: #ccc; */
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 992px) {
+
+  .growth-container {
+    height: 400px;
+  }
+
+  .image1 {
+    width: 160px;
+  }
+
+  .image2 {
+    width: 240px;
+  }
+
+}
+
+/* MAIN GROWTH ITEM */
+.growth-item {
+  position: relative;
+  padding-left: 55px;
+  /* Space for timeline */
+  overflow: visible;
+}
+
+/* GOLD BORDER */
+.growth-item {
+  border: 1px solid rgba(243, 179, 24, 0.4);
+  background: linear-gradient(145deg, #0b0b0b, #131313);
+  box-shadow:
+    0 0 10px rgba(243, 179, 24, 0.2),
+    inset 0 0 10px rgba(243, 179, 24, 0.15);
+}
+
+/* HOVER SHINE */
+.growth-item:hover {
+  box-shadow:
+    0 0 25px rgba(243, 179, 24, 0.5),
+    inset 0 0 15px rgba(243, 179, 24, 0.25);
+}
+
+/* TIMELINE CONTAINER */
+.gold-timeline {
+  position: absolute;
+  left: -25px;
+  top: 0;
+  height: 140%;
+  bottom: 0;
+  /* AUTO HEIGHT */
+  width: 3px;
+
+  background: linear-gradient(to bottom,
+      transparent,
+      #f3b318,
+      #ffdd77,
+      #f3b318,
+      transparent);
+
+  box-shadow: 0 0 12px #f3b318;
+}
+
+
+/* DOT */
+.gold-dot {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(circle,
+      #fff3c4 0%,
+      #f3b318 40%,
+      #b88400 100%);
+
+  box-shadow:
+    0 0 8px #f3b318,
+    0 0 15px rgba(243, 179, 24, 0.8);
+
+  animation: pulse-gold 2s infinite;
+}
+
+
+@keyframes pulse-gold {
+
+  0% {
+    box-shadow: 0 0 6px #f3b318;
+  }
+
+  50% {
+    box-shadow:
+      0 0 15px #f3b318,
+      0 0 25px rgba(243, 179, 24, 0.8);
+  }
+
+  100% {
+    box-shadow: 0 0 6px #f3b318;
+  }
+}
+
+.growth-item {
+
+  border-color: #f3b318;
+
+  box-shadow:
+    0 0 20px rgba(243, 179, 24, 0.4),
+    inset 0 0 15px rgba(243, 179, 24, 0.2);
+}
+
+@media (max-width: 992px) {
+
+  /* Show GIF on mobile */
+  .gif-wrapper {
+    display: flex !important;
+    height: 60vh;
+    /* 60% screen height */
+    margin-bottom: 30px;
+  }
+
+  .growth-gif {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+}

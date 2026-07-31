@@ -1,0 +1,73 @@
+<header id="header" class="fixed-top nav-bar-bg" [ngClass]="{'header-scrolled': isHeaderScrolled}">
+  <div class="ps-4 d-flex align-items-center pe-4">
+
+    <span class="logo me-5" [ngStyle]="{ 'margin-left': isMobile ? '0' : '8%' }">
+      <a href="index.html">
+        <img src="assets/img/food-pics/logo.png" style="border-radius: 50px;" />
+        <span class="header-text ps-4" [ngClass]="{'text-white':isHeaderScrolled}">Shawarmaji<sup
+            class="super-text">TM</sup></span>
+      </a></span>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar" [ngClass]="{'mobile-navbar':isMobile,'desktop-navbar':!isMobile}"
+      [class.scrolled]="isHeaderScrolled">
+      <ul>
+        <li><a class="nav-link scrollto" (click)="close()" [class.active]="isActive('#home')" routerLink="/"
+            fragment="home">Home</a></li>
+        <li><a class="nav-link scrollto" target="_blank" href="https://forms.gle/ZQvkpf1WiUQeHGW89">Franchise Form</a>
+        <li><a class="nav-link scrollto" (click)="close()" [class.active]="isActive('#menu')" routerLink="/home"
+            fragment="menu">Menu</a></li>
+        <li><a class="nav-link scrollto" (click)="close()" routerLink="gallery" routerLinkActive="active">Gallery</a>
+        </li>
+        <li><a class="nav-link scrollto" (click)="close()" [class.active]="isActive('#team')" routerLink="/home"
+            fragment="team">Founders</a></li>
+
+        <li class="dropdown"><a (click)="onDropdownClick($event)" routerLink="/" fragment="about"><span>About Us</span>
+            <i class="bi bi-chevron-down"></i></a>
+          <ul id="dropdown-ul">
+            <li><a class="nav-link scrollto" (click)="close()" [class.active]="isActive('#about')" routerLink="/home"
+                fragment="about">About Shawarmaji</a></li>
+            <li><a class="nav-link scrollto" (click)="close()" [class.active]="isActive('#growthStory')"
+                routerLink="/home" fragment="growthStory">Growth Story</a></li>
+            <li><a class="nav-link scrollto" (click)="close()" [class.active]="isActive('#brandPresence')"
+                routerLink="/home" fragment="brandPresence">Brand Presence</a></li>
+            <li><a class="nav-link scrollto" (click)="close()" routerLink="businessHighlights"
+                routerLinkActive="active">Business Highlights</a></li>
+            <!-- <li><a href="#">Drop Down 4</a></li> -->
+          </ul>
+        </li>
+        <!-- <li><a class="nav-link scrollto" (click)="close()" [class.active]="isActive('#about')" routerLink="/home" fragment="about">About</a></li>
+          <li><a class="nav-link scrollto" (click)="close()" [class.active]="isActive('#growthStory')" routerLink="/home" fragment="growthStory">Growth Story</a></li>
+          <li><a class="nav-link scrollto" (click)="close()" [class.active]="isActive('#brandPresence')"  routerLink="/home" fragment="brandPresence">Brand Presence</a></li> -->
+
+
+
+        <!-- <li><a class="nav-link scrollto" (click)="close()" [class.active]="isActive('#team')" routerLink="/purchase"
+              fragment="team">Purchase</a></li> -->
+        <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+
+        <li *ngIf="isMobile"><a class="getstarted scrollto" href="./assets/docs/Shawarmaji Brochure_April 2025.pdf"
+            target="_blank">Download Brochure</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle" id="navIcon" (click)="checkForMobile();"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header>

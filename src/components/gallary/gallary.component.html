@@ -1,0 +1,18 @@
+<section class="gallery-section">
+
+    <div class="gallery-bg"></div>
+
+    <div class="gallery-grid">
+
+        <div
+            *ngFor="let image of galleryImages; let i=index"
+            class="gallery-item"
+            [ngClass]="getClass(i)">
+
+            <img [src]="image">
+
+        </div>
+
+    </div>
+
+</section>
