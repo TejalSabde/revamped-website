@@ -74,7 +74,7 @@ const menuItems = [
     desc: 'Turkish-style chicken with fresh veggies & herbs',
     image: 'https://res.cloudinary.com/dcksetrok/image/upload/f_auto,q_auto,w_600,c_fill/v1777469199/Turkish_Chicken_Salad_nukbrj.jpg'
   },
-  
+
   {
     category: 'Salads',
     name: 'BBQ Paneer Salad',
@@ -177,6 +177,31 @@ const menuItems = [
     name: 'Classic Chicken Rice Bowl',
     desc: 'Rice bowl with classic grilled chicken',
     image: 'https://res.cloudinary.com/dcksetrok/image/upload/f_auto,q_auto,w_600,c_fill/v1777468917/Classic_Chicken_Rice_Bowl_um3lnq.jpg'
+  },
+  /* SUBS */
+  {
+    category: 'Subs',
+    name: 'BBQ Chicken Sub',
+    desc: 'Sub with flavorful BBQ chicken',
+    image: 'https://res.cloudinary.com/dcksetrok/image/upload/v1777469314/BBQ_Chicken_Sub_n12dbe.jpg'
+  },
+  {
+    category: 'Subs',
+    name: 'Tandoori Chicken Sub',
+    desc: 'Sub with flavorful tandoori chicken',
+    image: 'https://res.cloudinary.com/dcksetrok/image/upload/v1777469313/Tandoori_Chicken_Sub_wm3fav.jpg'
+  },
+  {
+    category: 'Subs',
+    name: 'Chilli Milli Paneer Sub',
+    desc: 'Sub with flavorful chilli milli paneer',
+    image: 'https://res.cloudinary.com/dcksetrok/image/upload/v1777470039/Chilli_Milli_Paneer_Sub_wmkxif.jpg'
+  },
+  {
+    category: 'Subs',
+    name: 'Aloo Tikki Sub',
+    desc: 'Sub with flavorful aloo tikki',
+    image: 'https://res.cloudinary.com/dcksetrok/image/upload/v1777470036/Aloo_Tikki_Sub_ojkjy8.jpg'
   }
 
 
@@ -197,7 +222,8 @@ export class MenuComponent {
     'Salads',
     'Platters',
     'Grillers',
-    'Rice Bowls'
+    'Rice Bowls',
+    'Subs'
   ];
 
   selectedCategory = 'Shawarmas';

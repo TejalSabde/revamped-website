@@ -18,6 +18,7 @@ import { GallaryComponent } from '../components/gallary/gallary.component';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { AwardsComponent } from 'src/components/awards/awards.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     CommonModule,
     AppRoutingModule,
     LightgalleryModule,

@@ -4,72 +4,60 @@ import {
   naviMumbaiLocations,
   puneLocations
 } from '../../utils/constants';
+
+const firstEight = [
+  ...thaneLocations.slice(0, 2).map(x => ({ ...x, city: 'Thane' })),
+  ...mumbaiLocations.slice(0, 2).map(x => ({ ...x, city: 'Mumbai' })),
+  ...naviMumbaiLocations.slice(0, 2).map(x => ({ ...x, city: 'Navi Mumbai' })),
+  ...puneLocations.slice(0, 2).map(x => ({ ...x, city: 'Pune' })),
+];
+
+const remaining = [
+  ...thaneLocations.slice(2).map(x => ({ ...x, city: 'Thane' })),
+  ...mumbaiLocations.slice(2).map(x => ({ ...x, city: 'Mumbai' })),
+  ...naviMumbaiLocations.slice(2).map(x => ({ ...x, city: 'Navi Mumbai' })),
+  ...puneLocations.slice(2).map(x => ({ ...x, city: 'Pune' })),
+];
+
 @Component({
   selector: 'app-brand-presense',
   templateUrl: './brand-presense.component.html',
   styleUrls: ['./brand-presense.component.css']
 })
 export class BrandPresenseComponent {
-  isMobile = window.innerWidth <= 990;
-  isMenuVisible: boolean[] = [false, false, false, false];
-  constructor(private elementRef: ElementRef) { }
-  // title: string = 'Our Outlets';
-  thaneLocations = thaneLocations;
-  mumbaiLocations = mumbaiLocations;
-  naviMumbaiLocations = naviMumbaiLocations;
-  puneLocations = puneLocations;
-  @HostListener('document:click', ['$event'])
-  handleClick(event: Event) {
-    const target = event.target as HTMLElement;
-    let button: any[4] = [];
-    let menu: any[4] = [];
-    button[0] = document.getElementById('mum');
-    menu[0] = document.getElementById('mum-list');
 
-    button[1] = document.getElementById('thane');
-    menu[1] = document.getElementById('thane-list');
+  allLocations = [...firstEight, ...remaining];
 
-    button[2] = document.getElementById('navi-mum');
-    menu[2] = document.getElementById('navi-mum-list');
+  searchText = "";
 
-    button[3] = document.getElementById('pune');
-    menu[3] = document.getElementById('pune-list');
-    // mum
-    // thane
-    // navi-mum
-    // pune
-    button.forEach((btn: any, index: number) => {
-      if (btn && !btn.contains(target) && menu[index] && !menu[index].contains(target)) {
-        this.isMenuVisible[index] = false;
-      }
-    });
+  displayCount = 8;
+
+  filteredLocations = [...this.allLocations];
+  displayedLocations = this.filteredLocations.slice(0, this.displayCount);
+
+  filterLocations() {
+
+    const value = this.searchText.toLowerCase().trim();
+
+    this.filteredLocations = this.allLocations.filter(x =>
+
+      x.city.toLowerCase().includes(value) ||
+
+      x.name.toLowerCase().includes(value)
+
+    );
+
+    this.displayedLocations = value
+      ? this.filteredLocations
+      : this.filteredLocations.slice(0, this.displayCount);
 
   }
 
-  toggleClass(id: number) {
-    // let btn = document.getElementById(id);
-    let ul = document.getElementById(id + '-list');
+  loadMore() {
 
-    // btn!.classList.toggle('active');
-    // ul!.classList.toggle('show');
-    this.isMenuVisible[id] = !this.isMenuVisible[id];
+    this.displayCount += 8;
 
-  }
-  onMenuClick(event: Event) {
-    event.stopPropagation(); // Prevent event from bubbling up to document
-  }
+    this.displayedLocations = this.filteredLocations.slice(0, this.displayCount);
 
-  onMouseLeave() {
-    const mapIframe = document.getElementById("mapiframe");
-    if (mapIframe) {
-      (mapIframe as HTMLIFrameElement).style.pointerEvents = 'none';
-    }
-  }
-
-  onMouseEnter() {
-    const mapIframe = document.getElementById("mapiframe");
-    if (mapIframe) {
-      (mapIframe as HTMLIFrameElement).style.pointerEvents = 'auto';
-    }
   }
 }

@@ -261,3 +261,31 @@
         left: 120%;
     }
 }
+
+@media (max-width:360px){
+
+    .diagonal-cards-wrapper{
+        transform:none;
+        width:100%;
+        height:auto;
+    }
+
+    .about-card{
+        position:relative;
+        width:100%;
+        left:auto !important;
+        top:auto !important;
+        margin-bottom:16px;
+    }
+
+    .about-left{
+        position:relative;
+        max-width:100%;
+        margin-bottom:75px;
+    }
+
+    .about-left h2{
+        font-size:32px;
+        line-height:1.2;
+    }
+}
