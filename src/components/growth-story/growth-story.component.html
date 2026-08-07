@@ -63,12 +63,20 @@
 
         <!-- RIGHT SIDE (images + SVG) -->
         <!-- RIGHT SIDE (images + GIF) -->
-        <div class="container col-lg-3 mt-3 gif-wrapper">
+
+
+        <div class="gif-wrapper" *ngIf="isMobile">
+          <video #transitionVideo autoplay muted loop playsinline webkit-playsinline preload="auto">
+            <source src="assets/img/transitionFinal.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="container col-lg-3 mt-3 gif-wrapper" *ngIf="!isMobile">
           <video autoplay muted loop playsinline>
             <source src="assets/img/transitionFinal.mp4" type="video/mp4">
           </video>
-          <!-- <img src="assets/img/transitionFinal.mp4" alt="Loading..." class="growth-gif" /> -->
         </div>
+
 
       </div>
     </div>

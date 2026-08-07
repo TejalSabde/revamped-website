@@ -1,27 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-/**
-* Template Name: Shawarmaji
-* Template URL: https://bootstrapmade.com/Shawarmaji-free-bootstrap-html-template-corporate/
-* Updated: Mar 17 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
-
-/* @import '~lightgallery/scss/lightgallery'; */
-/* @import url('https://fonts.cdnfonts.com/css/american-purpose-stripe-1-4'); */
 @import "~bootstrap-icons/font/bootstrap-icons.css";
-/* @font-face {
-  font-family: 'American Purpose';
-  src: url('./assets/fonts/American Purpose.woff');
-} */
-/* @font-face {
-  font-family: 'American Purpose';
-  src: url('./assets/fonts/american-purpose/American Purpose.otf');
-} */
+
 @font-face {
   font-family: 'American Purpose';
   font-style: normal;
@@ -33,7 +11,7 @@
 
 body {
   /* font-family: "Open Sans", sans-serif; */
-  font-family: 'American-Purpose'!important;
+  font-family: 'American-Purpose' !important;
   color: #444444;
 }
 
@@ -1071,7 +1049,16 @@ section {
   .why-us .content,
   .why-us .accordion-list {
     padding-left: 0;
-    padding-right: 0;
+    padding-right: 0
+  }
+}
+
+@media (max-width: 768px) {
+
+  .why-us .content,
+  .why-us .accordion-list {
+    padding-left: 15%;
+    padding-right: 10%;
   }
 }
 

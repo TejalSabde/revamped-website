@@ -266,6 +266,25 @@ export class GrowthStoryComponent implements OnInit {
   ];
 
   @ViewChild('path') animatedPath!: ElementRef;
+  @ViewChild('transitionVideo') transitionVideo!: ElementRef<HTMLVideoElement>;
+
+ngAfterViewInit(): void {
+
+  const video = this.transitionVideo.nativeElement;
+
+  // Explicitly set muted because some mobile browsers
+  // don't reliably interpret the HTML muted attribute.
+  video.muted = true;
+  video.defaultMuted = true;
+
+  video.play()
+    .then(() => {
+      console.log('Video started playing');
+    })
+    .catch(error => {
+      console.log('Autoplay blocked:', error);
+    });
+}
 
   ngOnInit(): void {
 
