@@ -165,3 +165,282 @@
   }
 
 }
+
+/* ============================= */
+/* FOOD TYPE FILTER */
+/* ============================= */
+
+.food-type-filter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.food-type-filter button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 7px 14px;
+
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.food-type-filter button:hover {
+  border-color: #f4b400;
+}
+
+.food-type-filter button.active {
+  background: #f4b400;
+  border-color: #f4b400;
+  color: #fff;
+}
+
+
+/* ============================= */
+/* FOOD TYPE ICON */
+/* ============================= */
+
+.food-type-icon {
+  width: 14px;
+  height: 14px;
+
+  border: 1.5px solid currentColor;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 2px;
+}
+
+.food-type-icon::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.veg-icon {
+  color: #198754;
+}
+
+.veg-icon::after {
+  background: #198754;
+}
+
+.nonveg-icon {
+  color: #dc3545;
+}
+
+.nonveg-icon::after {
+  background: #dc3545;
+}
+
+
+/* ============================= */
+/* MENU IMAGE */
+/* ============================= */
+
+.menu-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.menu-image-wrapper img {
+  display: block;
+  width: 100%;
+}
+
+
+/* ============================= */
+/* FOOD TYPE BADGE ON CARD */
+/* ============================= */
+
+.food-type-badge {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  width: 22px;
+  height: 22px;
+
+  background: #fff;
+
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Outer square */
+
+.food-type-badge .food-type-dot {
+  width: 14px;
+  height: 14px;
+
+  border: 1.5px solid;
+
+  border-radius: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Inner dot */
+
+.food-type-badge .food-type-dot::after {
+  content: '';
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+}
+
+
+/* VEG */
+
+.food-type-badge.veg .food-type-dot {
+  border-color: #198754;
+}
+
+.food-type-badge.veg .food-type-dot::after {
+  background: #198754;
+}
+
+
+/* NON VEG */
+
+.food-type-badge.nonveg .food-type-dot {
+  border-color: #dc3545;
+}
+
+.food-type-badge.nonveg .food-type-dot::after {
+  background: #dc3545;
+}
+
+@media (max-width: 768px) {
+
+  .food-type-filter {
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+
+  .food-type-filter button {
+    padding: 6px 11px;
+    font-size: 12px;
+  }
+
+  .food-type-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .food-type-icon::after {
+    width: 5px;
+    height: 5px;
+  }
+
+  .food-type-badge {
+    top: 6px;
+    right: 6px;
+    width: 20px;
+    height: 20px;
+  }
+
+}
+
+.menu-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.menu-content h2 {
+  font-size: 26px;
+  margin: 0;
+}
+
+
+/* ============================= */
+/* VEG / NON-VEG FILTER */
+/* ============================= */
+
+.food-type-filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.food-type-filter button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 6px 12px;
+
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.food-type-filter button:hover {
+  border-color: #f4b400;
+}
+
+.food-type-filter button.active {
+  background: #f4b400;
+  border-color: #f4b400;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+
+  .menu-heading {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .menu-content h2 {
+    font-size: 19px;
+    white-space: nowrap;
+  }
+
+  .food-type-filter {
+    gap: 3px;
+  }
+
+  .food-type-filter button {
+    padding: 5px 8px;
+    font-size: 10px;
+    gap: 3px;
+  }
+
+}

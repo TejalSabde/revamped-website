@@ -1,8 +1,8 @@
 export const thaneLocations: { name: string; link: string }[] = [
+    { name: 'Hiranandani Estate', link: 'https://maps.app.goo.gl/qHTBF53mRFxgAH1L8' },
     { name: 'Vasant Vihar', link: 'https://maps.app.goo.gl/xedpyBBmFZ8EkQBfA' },
     { name: 'Hariniwas circle', link: 'https://maps.app.goo.gl/WCWaVZmYCbn4kM6P9' },
     { name: 'Thane station', link: 'https://maps.app.goo.gl/F9BghnKrxG2ExSNu9' },
-    { name: 'Hiranandani Estate', link: 'https://maps.app.goo.gl/qHTBF53mRFxgAH1L8' },
     { name: 'Mira Road', link: 'https://maps.app.goo.gl/tss3tdxgeS8R1Xvw5' },
     { name: 'Dombivali', link: 'https://maps.app.goo.gl/Z8xhF7nJrBMJ9Lwy9' },
     { name: 'Kalyan', link: 'https://maps.app.goo.gl/gNajQsBqTNfhbrPW8' },
@@ -35,11 +35,9 @@ export const naviMumbaiLocations = [
     { name: 'Ulwe', link: 'https://maps.app.goo.gl/dtBFxQSH5Ji1vjbx6' }
 ];
 export const puneLocations = [
-    { name: 'Kothrud', link: 'https://maps.app.goo.gl/QhB5dRaRoverlayycbScVZb9' },
-    { name: 'Koregaon Park', link: 'https://maps.app.goo.gl/AcsPZbnCJy4CtMan8' },
+    { name: 'Aundh', link: 'https://maps.app.goo.gl/Hk9HRe1rQCf9zNfS9' },
     { name: 'Salunkhe Vihar', link: 'https://maps.app.goo.gl/Laptmdab7ht5PUE4A' },
     { name: 'Magarpatta', link: 'https://maps.app.goo.gl/KX7LNQDzxum7TL7y6' },
-    { name: 'Aundh', link: 'https://maps.app.goo.gl/Hk9HRe1rQCf9zNfS9' },
     { name: 'Viman nagar', link: 'https://maps.app.goo.gl/Zfwu1129JWdCTtJJ9' },
     { name: 'Sinhagad road', link: 'https://maps.app.goo.gl/J4ty7GaxKSYVw7Li7' },
     { name: 'Bharati Vidyapeeth', link: 'https://maps.app.goo.gl/KMvY9Y4SfHgmCa4P9' }

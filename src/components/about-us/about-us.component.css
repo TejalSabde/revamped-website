@@ -197,7 +197,14 @@
 
     .about-left {
         left: 16px;
-        max-width: 220px;
+        position:relative;
+        max-width:100%;
+        margin-bottom:75px;
+    }
+
+    .about-left h2{
+        font-size:32px;
+        line-height:1.2;
     }
 
     .about-label {
@@ -209,16 +216,20 @@
     .diagonal-cards-wrapper {
         position: relative;
         width: 100%;
-        height: 520px;
-        transform: scale(0.58);
+        height: auto;
         transform-origin: top left;
+        transform:none;
     }
 
     .about-card {
-        position: absolute;
         width: 55%;
         padding: 22px 18px;
         border-radius: 10% 0% 10% 0%;
+        position:relative;
+        width:100%;
+        left:auto !important;
+        top:auto !important;
+        margin-bottom:16px;
     }
 
     .about-card h5 {
@@ -259,33 +270,5 @@
     .card-5 {
         top: 65%;
         left: 120%;
-    }
-}
-
-@media (max-width:360px){
-
-    .diagonal-cards-wrapper{
-        transform:none;
-        width:100%;
-        height:auto;
-    }
-
-    .about-card{
-        position:relative;
-        width:100%;
-        left:auto !important;
-        top:auto !important;
-        margin-bottom:16px;
-    }
-
-    .about-left{
-        position:relative;
-        max-width:100%;
-        margin-bottom:75px;
-    }
-
-    .about-left h2{
-        font-size:32px;
-        line-height:1.2;
     }
 }
