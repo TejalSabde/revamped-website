@@ -298,10 +298,6 @@ export class MenuComponent {
 
   selectCategory(category: string): void {
     this.selectedCategory = category;
-
-    // Optional:
-    // Reset Veg/Non-Veg filter whenever category changes
-    this.selectedFoodType = 'all';
   }
 
   selectFoodType(type: string): void {
