@@ -264,6 +264,7 @@ export class GrowthStoryComponent implements OnInit {
     ...naviMumbaiLocations,
     ...puneLocations
   ];
+  showGrowthTimeline = false;
 
   @ViewChild('path') animatedPath!: ElementRef;
   @ViewChild('transitionVideo') transitionVideo!: ElementRef<HTMLVideoElement>;

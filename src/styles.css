@@ -6,12 +6,13 @@
   font-weight: 400;
   src: local('American Purpose'), url('./assets/fonts//American Purpose.woff') format('woff');
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
 
 
 
 body {
   /* font-family: "Open Sans", sans-serif; */
-  font-family: 'American-Purpose' !important;
+  font-family: Georgia, "Times New Roman", serif !important;
   color: #444444;
 }
 
@@ -158,6 +159,14 @@ h6 {
   padding: 7px 0;
 }
 
+#header.header-scrolled {
+  background: #00000066;
+}
+
+.nav-bar-bg {
+  background: #00000091;
+}
+
 .text-color-anim {
   animation: effect 2s linear infinite;
 }
@@ -178,7 +187,6 @@ h6 {
 }
 
 .header-text {
-  font-family: "Playfair Display", serif;
   font-size: 22px;
 }
 
@@ -191,11 +199,24 @@ h6 {
 }
 
 #header .logo a {
-  color: #000;
+  color: #f3b318;
 }
 
 #header .logo img {
   max-height: 40px;
+}
+
+.mobile-nav-toggle {
+  display: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -255,6 +276,19 @@ h6 {
   */
 .navbar {
   padding: 0;
+  color: #f3b318;
+  transition: background 0.3s ease, color 0.3s ease;
+  position: absolute;
+  right: 5%;
+}
+
+.desktop-navbar {
+  position: absolute;
+  right: 26%;
+}
+
+.mobile-navbar {
+  position: fixed;
 }
 
 .navbar ul {
@@ -267,6 +301,7 @@ h6 {
 
 .navbar li {
   position: relative;
+  padding-right: 12%;
 }
 
 .navbar a,
@@ -277,7 +312,7 @@ h6 {
   padding: 10px 0 10px 30px;
   font-size: 17px;
   font-weight: 500;
-  color: black;
+  color: inherit;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -578,50 +613,120 @@ h6 {
 /*--------------------------------------------------------------
   # Sections General
   --------------------------------------------------------------*/
-section {
+/* section {
   padding: 80px 0;
   overflow: hidden;
-}
+} */
 
 .section-title {
-  text-align: center;
-  padding-bottom: 30px;
+  text-align: left;
 }
 
-.section-title h2 {
-  font-size: 32px;
-  font-weight: bold;
+.section-title h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 64px;
+  line-height: 1.05;
+  font-weight: 400;
+  color: #000;
+}
+
+.section-title h3 strong {
+  color: #dca927;
+  font-weight: 400;
+}
+
+.growth-intro .section-title {
+  margin: 0;
+}
+
+.growth-intro .section-title .section-eyebrow {
+  margin-top: 0;
+  color: #dca329;
+}
+
+.growth-intro .section-title h3 {
+  color: #f7f3e9;
+}
+
+.growth-intro .section-title .section-line {
+  margin: 25px 0 24px;
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+  margin-bottom: 18px;
+  color: #dca927;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.section-eyebrow span {
+  width: 32px;
+  height: 1px;
+  background: #dca927;
+}
+
+.section-line {
+  width: 68px;
+  height: 3px;
+  margin-top: 28px;
+  background: linear-gradient(90deg, #dca927, rgba(220, 169, 39, 0.1));
+}
+
+.growth-details .section-title {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.growth-details .section-title .section-eyebrow {
+  justify-content: center;
+  gap: 12px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  position: relative;
-  color: black;
+}
+
+.growth-details .section-title h3 {
+  color: #f5f1e8;
+  font-size: 52px;
+}
+
+.growth-details .section-title p {
+  margin: 15px 0 0;
+  color: #aaa99f;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+}
+
+.brand-presence-section .section-title {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .growth-details .section-title {
+    margin-bottom: 35px;
+  }
+
+  .growth-details .section-title h3 {
+    font-size: 40px;
+  }
+
+  .growth-details .section-title p {
+    font-size: 11px;
+  }
 }
 
 .growth h2::after {
   background-color: white !important;
-}
-
-.section-title h2::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 120px;
-  height: 1px;
-  background: #ddd;
-  bottom: 1px;
-  left: calc(50% - 60px);
-}
-
-.section-title h2::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: #f3b318;
-  bottom: 0;
-  left: calc(50% - 20px);
 }
 
 .section-title p {
@@ -2224,4 +2329,129 @@ section {
 
 .social-links img {
   width: 1.3rem;
+}
+
+.navbar.scrolled {
+  color: #f3b318;
+}
+
+.navbar.scrolled .bi {
+  color: #f3b318;
+}
+
+@media (max-width: 1025px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #000000a6;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: black !important;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover > a {
+  color: #f3b318;
+}
+
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
+  visibility: visible !important;
+}
+
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 15px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  text-transform: none;
+  font-weight: 500;
+  color: #0c3c53;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover > a {
+  color: #f3b318;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static !important;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
+}
+
+@media (max-width: 1366px) {
+  .desktop-navbar {
+    right: 12%;
+  }
 }

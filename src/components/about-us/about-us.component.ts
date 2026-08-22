@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AboutUsComponent {
   selectedCard: number = 2; // default featured card
-
+  isMobile = window.innerWidth <= 990;
   selectCard(cardNumber: number): void {
     this.selectedCard = cardNumber;
   }

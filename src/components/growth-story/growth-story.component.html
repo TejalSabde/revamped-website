@@ -1,91 +1,249 @@
-<section class="s-curve-container">
-  <div class="curve-top">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path
-        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5,73.84-4.36,147.54,16.88,218.32,37.5,110.12,32.07,211.11,51.21,306.88,51.21,114,0,229.17-23.86,310-76.27V0Z"
-        class="shape-fill"></path>
-    </svg>
-  </div>
-  <div id="growthStory" class="why-us growth-image">
-    <div class="container-fluid aos-init aos-animate">
-      <div class="row">
-        <div class="section-title">
-          <h2 class="text-yellow">Growth Story</h2>
-          <div class="content">
-            <strong>35+ Outlets in Thane, Mumbai, Navi Mumbai & Pune</strong>
-          </div>
+<section class="growth-section" id="growthStory">
+
+  <!-- =====================================================
+       PREMIUM STORY INTRO
+       ===================================================== -->
+
+  <div class="growth-intro">
+    <div class="growth-intro-container" [ngClass]="{ 'grid-container': !isMobile }">
+
+      <div class="section-title" *ngIf="isMobile">
+        <div class="section-eyebrow">
+        <span></span>
+        OUR STORY
+        <span></span>
         </div>
 
-        <!-- LEFT SIDE (accordion) -->
-        <div class="col-lg-8 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1">
+        <h3>
+        The <strong>Story</strong>
+        </h3>
+
+        <div class="section-line"></div>
+
+      </div>
+
+      <!-- LEFT VISUAL -->
+      <div class="growth-visual">
+        <img src="assets/img/food-pics/story.png" alt="" class="growth-decoration growth-decoration-bg" />
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="growth-story-content">
+
+        <div class="section-title" *ngIf="!isMobile">
+          <div class="section-eyebrow">
+          <span></span>
+          OUR STORY
+          <span></span>
+          </div>
+
+          <h3>
+          The <strong>Story</strong>
+          </h3>
+
+          <div class="section-line"></div>
+
+        </div>
+
+        <p class="story-description">
+          From a humble beginning to a growing presence across
+          Thane, Mumbai, Navi Mumbai and Pune, Shawarmaji has
+          built its journey around great food, authentic flavours
+          and a passion for serving every customer better.
+        </p>
+
+
+        <!-- HIGHLIGHTS -->
+        <div class="story-highlights">
+
+          <div class="story-highlight">
+            <span class="highlight-icon">✦</span>
+            <span>QSR Model</span>
+          </div>
+
+          <div class="story-highlight">
+            <span class="highlight-icon">✦</span>
+            <span>Food Delivery</span>
+          </div>
+
+        </div>
+
+
+        <!-- LOAD MORE -->
+        <button type="button" class="growth-load-more" (click)="showGrowthTimeline = !showGrowthTimeline">
+
+          <span>
+            {{ showGrowthTimeline ? 'SHOW LESS' : 'LOAD MORE' }}
+          </span>
+
+          <span class="load-more-arrow">
+            {{ showGrowthTimeline ? '↑' : '→' }}
+          </span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       EXISTING GROWTH TIMELINE
+       Hidden initially
+       ===================================================== -->
+
+  <div class="growth-details" *ngIf="showGrowthTimeline">
+
+    <div class="growth-details-inner">
+
+      <!-- SECTION TITLE -->
+
+      <div class="section-title">
+
+        <div class="section-eyebrow">
+          <span></span>
+          OUR JOURNEY
+          <span></span>
+        </div>
+
+        <h3>
+          Growth <strong>Story</strong>
+        </h3>
+
+        <p>
+          35+ Outlets in Thane, Mumbai, Navi Mumbai & Pune
+        </p>
+
+        <div class="section-line"></div>
+
+      </div>
+
+
+      <!-- TIMELINE CONTENT -->
+
+      <div class="row growth-timeline-row">
+
+        <!-- LEFT SIDE -->
+        <div class="col-lg-8 d-flex flex-column justify-content-center
+                 align-items-stretch order-2 order-lg-1">
+
           <div class="accordion-list">
+
             <ul>
+
               <li *ngFor="let item of growthStory; let i = index" class="growth-item">
 
-                <!-- Timeline -->
+                <!-- GOLD TIMELINE -->
                 <div class="gold-timeline">
+
                   <span class="gold-dot"></span>
+
                 </div>
-                <a data-bs-toggle="collapse" class="collapse text-dark" [attr.data-bs-target]="'#accordion-list-' + i">
-                  <span class="text-yellow">Year: {{ item.year }}</span> {{ item.summary }}
+
+
+                <!-- ACCORDION HEADER -->
+
+                <a data-bs-toggle="collapse" class="growth-accordion-header collapsed"
+                  [attr.data-bs-target]="'#accordion-list-' + i">
+
+                  <span class="growth-year">
+                    Year: {{ item.year }}
+                  </span>
+
+                  <span class="growth-summary">
+                    {{ item.summary }}
+                  </span>
+
                   <i class="bx bx-chevron-down icon-show"></i>
+
                   <i class="bx bx-chevron-up icon-close"></i>
+
                 </a>
 
+
+                <!-- ACCORDION BODY -->
+
                 <div [id]="'accordion-list-' + i" class="collapse" data-bs-parent=".accordion-list">
+
                   <div class="accordion-body row">
+
                     <div class="timeline-panel col m-1" *ngFor="let event of item.events">
+
                       <div class="timeline-heading">
-                        <h5 class="timeline-title">{{ event.month }}</h5>
-                        <h6 class="timeline-title">{{ event.title }}</h6>
+
+                        <h5 class="timeline-title">
+                          {{ event.month }}
+                        </h5>
+
+                        <h6 class="timeline-title">
+                          {{ event.title }}
+                        </h6>
+
                       </div>
+
+
                       <div class="timeline-body">
+
                         <p>
+
                           <ng-container *ngIf="getLocationLink(event.description) as link; else plainText">
 
                             <a [href]="link" target="_blank" rel="noopener noreferrer" class="location-link">
 
                               {{ event.description }}
+
                             </a>
+
                           </ng-container>
+
+
                           <ng-template #plainText>
+
                             {{ event.description }}
+
                           </ng-template>
+
                         </p>
+
                       </div>
+
                     </div>
+
                   </div>
+
                 </div>
+
               </li>
+
             </ul>
+
           </div>
+
         </div>
 
-        <!-- RIGHT SIDE (images + SVG) -->
-        <!-- RIGHT SIDE (images + GIF) -->
 
+        <!-- RIGHT / IMAGE -->
 
-        <div class="gif-wrapper" *ngIf="isMobile">
-          <video #transitionVideo autoplay muted loop playsinline webkit-playsinline preload="auto">
-            <source src="assets/img/transitionFinal.mp4" type="video/mp4">
-          </video>
+        <div class="col-lg-4 order-1 order-lg-2 growth-timeline-visual">
+
+          <div class="timeline-video-wrapper">
+
+            <video autoplay muted loop playsinline webkit-playsinline preload="auto">
+
+              <source src="assets/img/transitionFinal.mp4" type="video/mp4">
+
+            </video>
+
+          </div>
+
         </div>
-
-        <div class="container col-lg-3 mt-3 gif-wrapper" *ngIf="!isMobile">
-          <video #transitionVideo autoplay muted loop playsinline webkit-playsinline preload="auto">
-            <source src="assets/img/transitionFinal.mp4" type="video/mp4">
-          </video>
-        </div>
-
 
       </div>
+
     </div>
+
   </div>
-  <!-- <div class="curve-bottom">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path
-        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-        class="shape-fill"></path>
-    </svg>
-  </div> -->
+
 </section>

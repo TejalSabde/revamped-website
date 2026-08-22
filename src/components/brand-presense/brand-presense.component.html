@@ -3,28 +3,33 @@
   <div class="paper-overlay"></div>
 
   <div class="container">
-
     <div class="section-title">
-      <h2 class="text-yellow">Brand Presence</h2>
+
+      <div class="section-eyebrow">
+        <span></span>
+        OUR PRESENCE
+        <span></span>
+      </div>
+
+      <h3>
+        Brand <strong>Presence</strong>
+      </h3>
+
+      <div class="section-line"></div>
+
     </div>
 
     <div class="search-box">
 
       <i class="bi bi-search"></i>
 
-      <input
-        type="text"
-        placeholder="Search by city or outlet..."
-        [(ngModel)]="searchText"
-        (input)="filterLocations()">
+      <input type="text" placeholder="Search by city or outlet..." [(ngModel)]="searchText" (input)="filterLocations()">
 
     </div>
 
     <div class="outlet-grid">
 
-      <div
-        class="outlet-card"
-        *ngFor="let outlet of displayedLocations">
+      <div class="outlet-card" *ngFor="let outlet of displayedLocations">
 
         <div class="city-badge">
           {{outlet.city}}
@@ -35,10 +40,7 @@
           {{outlet.name}}
         </h4>
 
-        <a
-          [href]="outlet.link"
-          target="_blank"
-          class="view-map">
+        <a [href]="outlet.link" target="_blank" class="view-map">
 
           View on Google Maps
           <i class="bi bi-arrow-up-right"></i>
@@ -49,12 +51,9 @@
 
     </div>
 
-    <div class="text-center mt-5"
-      *ngIf="!searchText && filteredLocations.length>displayCount">
+    <div class="text-center mt-5" *ngIf="!searchText && filteredLocations.length>displayCount">
 
-      <button
-        class="btn-load"
-        (click)="loadMore()">
+      <button class="btn-load" (click)="loadMore()">
 
         Load More
 

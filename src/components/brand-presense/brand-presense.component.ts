@@ -27,7 +27,7 @@ const remaining = [
 export class BrandPresenseComponent {
 
   allLocations = [...firstEight, ...remaining];
-
+  isMobile = window.innerWidth <= 990;
   searchText = "";
 
   displayCount = 8;

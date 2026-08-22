@@ -7,18 +7,13 @@
   }">
 
 
-    <!-- Background -->
-    <div class="hero-bg"></div>
 
 
     <!-- Content -->
     <div [ngClass]="{
     'mobile-hero-content': isMobile,
     'hero-content': !isMobile
-  }" [ngStyle]="{
-    transform:'scale(' + (isMobile ? mobileScale : heroScale) + ')',
-    opacity: heroOpacity
-  } ">
+  }">
 
       <!-- Desktop Image -->
       <div [ngClass]="{
@@ -31,31 +26,6 @@
       <div class=" fade-in-right" [ngClass]="{
     'desktop-hero-text hero-text': !isMobile
   }">
-
-
-        <h4 [ngClass]="{
-    'mobile-subtitle': isMobile,
-    'subtitle': !isMobile
-  }">
-          Savory
-        </h4>
-
-        <h1 [ngClass]="{
-    'mobile-title': isMobile,
-    'title': !isMobile
-  }">
-          Shawarma Like Never Before
-        </h1>
-
-        <p [ngClass]="{
-    'mobile-desc': isMobile,
-    'description': !isMobile
-  }">
-          Freshly grilled, expertly crafted shawarmas,
-          bursting with authentic flavors and passion.
-        </p>
-
-        <!-- Button (Desktop Only Optional) -->
         <button class="brochure-btn" *ngIf="!isMobile" (click)="downloadBrochure()">
           Download Brochure
         </button>
@@ -64,12 +34,73 @@
 
     </div>
 
-    <!-- Scroll Icon -->
-    <div class="scroll-down">
-      ↓
+  </div>
+
+  <section class="premium-features" *ngIf="!isMobile">
+  <div class="features-container">
+
+    <!-- Premium Ingredients -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="bi bi-feather"></i>
+      </div>
+
+      <div class="feature-content">
+        <h3>Premium Ingredients</h3>
+        <p>
+          We use only the finest<br>
+          and freshest ingredients.
+        </p>
+      </div>
+    </div>
+
+    <!-- Freshly Grilled -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="bi bi-fire"></i>
+      </div>
+
+      <div class="feature-content">
+        <h3>Freshly Grilled</h3>
+        <p>
+          Grilled to perfection for<br>
+          that authentic smoky flavor.
+        </p>
+      </div>
+    </div>
+
+    <!-- Signature Flavors -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="bi bi-cone-striped"></i>
+      </div>
+
+      <div class="feature-content">
+        <h3>Signature Flavors</h3>
+        <p>
+          Unique recipes crafted to<br>
+          delight your taste buds.
+        </p>
+      </div>
+    </div>
+
+    <!-- Hygienic & Safe -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="bi bi-shield-check"></i>
+      </div>
+
+      <div class="feature-content">
+        <h3>Hygienic &amp; Safe</h3>
+        <p>
+          Highest standards of hygiene<br>
+          for your safety.
+        </p>
+      </div>
     </div>
 
   </div>
+</section>
 
 
   <!-- MAIN CONTENT -->

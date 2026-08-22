@@ -1,14 +1,19 @@
 .location-link {
-    color: inherit;           /* Same color as normal text */
-    text-decoration: none;    /* No underline */
-    font: inherit;            /* Same font, size, weight */
-    cursor: pointer;          /* Optional: keep pointer on hover */
+  color: inherit;
+  /* Same color as normal text */
+  text-decoration: none;
+  /* No underline */
+  font: inherit;
+  /* Same font, size, weight */
+  cursor: pointer;
+  /* Optional: keep pointer on hover */
 }
 
 .location-link:hover {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
+
 /* SECTION BACKGROUND */
 .section-bg {
   background: radial-gradient(circle at center, #111 0%, #000 70%);
@@ -16,18 +21,9 @@
   overflow: hidden;
 }
 
-.s-curve-container {
-  position: relative;
-  background: #fafafa; /* The soft pink from your image */
-  padding: 100px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 500px;
-}
-
 /* Common styles for the curve wrappers */
-.curve-top, .curve-bottom {
+.curve-top,
+.curve-bottom {
   position: absolute;
   left: 0;
   width: 100%;
@@ -41,102 +37,28 @@
 
 .curve-bottom {
   bottom: 0;
-  transform: rotate(180deg); /* Flips the wave to face downward */
+  transform: rotate(180deg);
+  /* Flips the wave to face downward */
 }
 
-.curve-top svg, .curve-bottom svg {
+.curve-top svg,
+.curve-bottom svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 80px; /* Adjust this to make the curve deeper or shallower */
+  height: 80px;
+  /* Adjust this to make the curve deeper or shallower */
 }
 
 /* This color must match your outer background color (e.g., white) */
-.curve-top .shape-fill, 
+.curve-top .shape-fill,
 .curve-bottom .shape-fill {
-  fill: #FFFFFF; 
+  fill: #FFFFFF;
 }
 
 .content {
   position: relative;
   z-index: 1;
-}
-
-/* MAIN CONTAINER */
-.growth-container {
-  position: relative;
-  height: 520px;
-  width: 100%;
-}
-
-/* COMMON IMAGE STYLE */
-.growth-container img {
-  position: absolute;
-  filter: drop-shadow(0 0 25px rgba(243, 179, 24, 0.7));
-  transition: transform 0.4s ease;
-  animation: float 6s ease-in-out infinite;
-}
-
-/* TRUCK */
-.image1 {
-  bottom: 0;
-  left: 20px;
-  width: 220px;
-  z-index: 3;
-}
-
-/* OUTLET */
-.image2 {
-  top: 30px;
-  right: 10px;
-  width: 320px;
-  z-index: 3;
-}
-
-/* FLOATING ANIMATION */
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-15px);
-  }
-}
-
-/* SVG LINE */
-.line {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-}
-
-/* PATH */
-.path {
-  stroke: #f3b318;
-  stroke-width: 3;
-  filter: drop-shadow(0 0 10px #f3b318);
-}
-
-/* ARROW */
-.new-path {
-  offset-path: path('M220 500 Q 380 460, 320 320 T 350 150');
-  offset-distance: 0%;
-  animation: move-arrow 3s linear infinite;
-  filter: drop-shadow(0 0 10px #f3b318);
-}
-
-/* ARROW ANIMATION */
-@keyframes move-arrow {
-  from {
-    offset-distance: 0%;
-  }
-
-  to {
-    offset-distance: 100%;
-  }
 }
 
 /* CONTENT */
@@ -148,7 +70,7 @@
 
 /* ACCORDION CARDS */
 .accordion-list li {
-  background: #fff;
+  background: rgba(243, 179, 24, 0.24);
   border-radius: 10px;
   margin-bottom: 15px;
   /* border: 1px solid rgba(243, 179, 24, 0.2); */
@@ -157,15 +79,6 @@
 
 .accordion-list li:hover {
   box-shadow: 0 0 15px rgba(243, 179, 24, 0.3);
-}
-
-/* TIMELINE CARDS */
-.timeline-panel {
-  /* background: #0e0e0e; */
-  border-radius: 10px;
-  padding: 15px;
-  border: 1px solid rgb(243 179 24 / 53%);
-  box-shadow: inset 0 0 10px rgba(243, 179, 24, 0.1);
 }
 
 /* TIMELINE TEXT */
@@ -178,93 +91,6 @@
   /* color: #ccc; */
   font-size: 14px;
 }
-
-/* RESPONSIVE */
-@media(max-width: 992px) {
-
-  .growth-container {
-    height: 400px;
-  }
-
-  .image1 {
-    width: 160px;
-  }
-
-  .image2 {
-    width: 240px;
-  }
-
-}
-
-/* MAIN GROWTH ITEM */
-.growth-item {
-  position: relative;
-  padding-left: 55px;
-  /* Space for timeline */
-  overflow: visible;
-}
-
-/* GOLD BORDER */
-.growth-item {
-  border: 1px solid rgba(243, 179, 24, 0.4);
-  background: linear-gradient(145deg, #0b0b0b, #131313);
-  box-shadow:
-    0 0 10px rgba(243, 179, 24, 0.2),
-    inset 0 0 10px rgba(243, 179, 24, 0.15);
-}
-
-/* HOVER SHINE */
-.growth-item:hover {
-  box-shadow:
-    0 0 25px rgba(243, 179, 24, 0.5),
-    inset 0 0 15px rgba(243, 179, 24, 0.25);
-}
-
-/* TIMELINE CONTAINER */
-.gold-timeline {
-  position: absolute;
-  left: -25px;
-  top: 0;
-  height: 140%;
-  bottom: 0;
-  /* AUTO HEIGHT */
-  width: 3px;
-
-  background: linear-gradient(to bottom,
-      transparent,
-      #f3b318,
-      #ffdd77,
-      #f3b318,
-      transparent);
-
-  box-shadow: 0 0 12px #f3b318;
-}
-
-
-/* DOT */
-.gold-dot {
-  position: absolute;
-  top: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 14px;
-  height: 14px;
-
-  border-radius: 50%;
-
-  background: radial-gradient(circle,
-      #fff3c4 0%,
-      #f3b318 40%,
-      #b88400 100%);
-
-  box-shadow:
-    0 0 8px #f3b318,
-    0 0 15px rgba(243, 179, 24, 0.8);
-
-  animation: pulse-gold 2s infinite;
-}
-
 
 @keyframes pulse-gold {
 
@@ -283,15 +109,6 @@
   }
 }
 
-.growth-item {
-
-  border-color: #f3b318;
-
-  box-shadow:
-    0 0 20px rgba(243, 179, 24, 0.4),
-    inset 0 0 15px rgba(243, 179, 24, 0.2);
-}
-
 @media (max-width: 992px) {
 
   /* Show GIF on mobile */
@@ -307,5 +124,727 @@
     max-height: 100%;
     width: auto;
     height: auto;
+  }
+}
+
+/* =========================================================
+   SHAWARMAJI - GROWTH STORY
+   PREMIUM DARK STORY SECTION
+   ========================================================= */
+
+.growth-section {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 15% 50%,
+      rgba(243, 179, 24, 0.045),
+      transparent 30%),
+    #0b0d08;
+
+  color: #fff;
+
+  font-family:
+    "Montserrat",
+    "Poppins",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   INTRO SECTION
+   ========================================================= */
+
+.growth-intro {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  grid-template-columns: 1fr 0.9fr;
+  gap: 90px;
+  display: grid;
+
+}
+
+
+.growth-intro-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+
+/* Description */
+
+.story-description {
+  max-width: 470px;
+
+  margin: 0 0 25px;
+
+  color: #aaa99f;
+
+  /* font-family:
+    "Montserrat",
+    Arial,
+    sans-serif; */
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+   ========================================================= */
+
+.story-highlights {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, max-content);
+
+  gap:
+    13px 35px;
+
+  margin-bottom: 30px;
+}
+
+
+.story-highlight {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #d7d5cd;
+
+  /* font-family:
+    "Montserrat",
+    Arial,
+    sans-serif; */
+
+  font-size: 11px;
+
+  letter-spacing: 0.2px;
+}
+
+
+.highlight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 14px;
+  height: 14px;
+
+  color: #f3b318;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   LOAD MORE BUTTON
+   ========================================================= */
+
+.growth-load-more {
+  display: inline-flex;
+  gap: 25px;
+  font-size: 11px;
+  background: #f3b318;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 40px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+
+.growth-load-more:hover {
+  background: transparent;
+
+  color: #dca329;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 25px rgba(243, 179, 24, 0.15);
+}
+
+
+.load-more-arrow {
+  font-size: 16px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   GROWTH DETAILS
+   ========================================================= */
+
+.growth-details {
+  position: relative;
+
+  padding:
+    90px 5% 110px;
+
+  background:
+    linear-gradient(180deg,
+      #10120d,
+      #0a0b08);
+
+  border-top:
+    1px solid rgba(243, 179, 24, 0.12);
+}
+
+
+.growth-details-inner {
+  max-width: 1250px;
+
+  margin: auto;
+}
+
+
+/* =========================================================
+   DETAILS HEADING
+   ========================================================= */
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.growth-timeline-row {
+  align-items: center;
+}
+
+
+/* Accordion list */
+
+.accordion-list ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+/* =========================================================
+   GROWTH ITEM
+   ========================================================= */
+
+.growth-item {
+  position: relative;
+
+  margin-bottom: 16px;
+
+  padding: 0;
+
+  overflow: visible;
+
+  border:
+    1px solid rgba(243, 179, 24, 0.28);
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(135deg,
+      #12140f,
+      #171811);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.25);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.growth-item:hover {
+  border-color:
+    rgba(243, 179, 24, 0.65);
+
+  box-shadow:
+    0 12px 35px rgba(243, 179, 24, 0.09);
+}
+
+
+/* =========================================================
+   ACCORDION HEADER
+   ========================================================= */
+
+.growth-accordion-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  min-height: 72px;
+
+  padding:
+    15px 25px 15px 45px;
+
+  color: #ddd9cf;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  /* font-family:
+    "Montserrat",
+    Arial,
+    sans-serif; */
+
+  font-size: 13px;
+}
+
+
+.growth-year {
+  color: #f3b318;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+.growth-summary {
+  color: #c6c3ba;
+
+  font-weight: 400;
+}
+
+
+.growth-accordion-header .icon-show,
+.growth-accordion-header .icon-close {
+  margin-left: auto;
+
+  color: #f3b318;
+
+  font-size: 20px;
+}
+
+
+.growth-accordion-header .icon-close {
+  display: none;
+}
+
+
+.growth-accordion-header:not(.collapsed) .icon-show {
+  display: none;
+}
+
+
+.growth-accordion-header:not(.collapsed) .icon-close {
+  display: block;
+}
+
+
+/* =========================================================
+   GOLD TIMELINE
+   ========================================================= */
+
+.gold-timeline {
+  position: absolute;
+
+  left: -26px;
+
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  background:
+    linear-gradient(to bottom,
+      transparent,
+      #f3b318 15%,
+      #f3b318 85%,
+      transparent);
+
+  box-shadow:
+    0 0 12px rgba(243, 179, 24, 0.45);
+}
+
+
+.gold-dot {
+  position: absolute;
+
+  top: 28px;
+
+  left: 50%;
+
+  width: 12px;
+  height: 12px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background: #f3b318;
+
+  border:
+    3px solid #161810;
+
+  box-shadow:
+    0 0 10px rgba(243, 179, 24, 0.8);
+}
+
+
+/* =========================================================
+   ACCORDION BODY
+   ========================================================= */
+
+.accordion-body {
+  margin:
+    0 15px 15px;
+
+  padding: 8px;
+
+  border-top:
+    1px solid rgba(243, 179, 24, 0.12);
+}
+
+
+/* =========================================================
+   EVENT CARDS
+   ========================================================= */
+
+.timeline-panel {
+  padding: 18px !important;
+
+  min-height: 125px;
+
+  border:
+    1px solid rgba(243, 179, 24, 0.24);
+
+  border-radius: 8px;
+
+  background: #f7f3e9;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+.timeline-title {
+  margin: 0 0 5px;
+
+  color: #b67d0c;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 16px;
+
+  font-weight: 400;
+}
+
+
+.timeline-heading h6.timeline-title {
+  /* font-family:
+    "Montserrat",
+    Arial,
+    sans-serif; */
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+}
+
+
+.timeline-body p {
+  margin: 12px 0 0;
+
+  color: #3d3a34;
+
+  /* font-family:
+    "Montserrat",
+    Arial,
+    sans-serif; */
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+.location-link {
+  color: inherit;
+
+  text-decoration: none;
+
+  font: inherit;
+}
+
+
+.location-link:hover {
+  color: #b67d0c;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   RIGHT TIMELINE VIDEO
+   ========================================================= */
+
+.growth-timeline-visual {
+  padding-left: 35px;
+}
+
+
+.timeline-video-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 470px;
+
+  overflow: hidden;
+
+  border-radius: 3px;
+
+  border:
+    1px solid rgba(243, 179, 24, 0.3);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+
+.timeline-video-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(135deg,
+      rgba(243, 179, 24, 0.08),
+      transparent 50%);
+
+  pointer-events: none;
+}
+
+
+.timeline-video-wrapper video {
+  width: 100%;
+  height: 100%;
+
+  min-height: 470px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* =========================================================
+
+@media (max-width: 992px) {
+
+  .growth-intro {
+    padding:
+      80px 6%;
+  }
+
+
+  .growth-intro-container {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .growth-story-content {
+    max-width: 600px;
+
+    margin: auto;
+  }
+
+
+  .growth-timeline-visual {
+    margin-bottom: 40px;
+
+    padding-left: 0;
+  }
+
+
+  .timeline-video-wrapper,
+  .timeline-video-wrapper video {
+    min-height: 350px;
+  }
+
+
+  .gold-timeline {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .growth-intro {
+    min-height: auto;
+
+    padding:
+      5%;
+  }
+
+
+  .growth-intro-container {
+    gap: 45px;
+  }
+
+
+  .story-description {
+    font-size: 12px;
+
+    line-height: 1.75;
+  }
+
+
+  .story-highlights {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px 10px;
+  }
+
+
+  .story-highlight {
+    font-size: 10px;
+  }
+
+
+  .growth-load-more {
+    padding:
+      11px 15px;
+
+    font-size: 11px;
+  }
+
+
+  .growth-details {
+    padding:
+      60px 15px 70px;
+  }
+
+
+  .growth-accordion-header {
+    min-height: 65px;
+
+    padding:
+      13px 15px;
+  }
+
+
+  .growth-year {
+    font-size: 11px;
+  }
+
+
+  .growth-summary {
+    font-size: 11px;
+  }
+
+
+  .growth-accordion-header {
+    flex-wrap: wrap;
+
+    gap: 5px 10px;
+  }
+
+
+  .growth-accordion-header .icon-show,
+  .growth-accordion-header .icon-close {
+    margin-left: auto;
+  }
+
+
+  .accordion-body {
+    margin:
+      0 7px 10px;
+
+    padding: 5px;
+  }
+
+
+  .timeline-panel {
+    min-height: auto;
+
+    padding: 15px !important;
+  }
+
+
+  .timeline-video-wrapper,
+  .timeline-video-wrapper video {
+    min-height: 300px;
+  }
+
+}
+
+/* =========================================================
+   GROWTH STORY - IMAGE COMPOSITION
+   One clean implementation for the current HTML
+   ========================================================= */
+
+.growth-visual img {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------
+   HOVER
+   --------------------------------------------------------- */
+
+.growth-visual:hover {
+  transform: translate(3px, 3px);
+  transition: transform 0.5s ease;
+}
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .growth-visual {
+    max-width: 600px;
+    height: 500px;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 576px) {
+  .growth-visual {
+    width: 100%;
+    height: 350px;
   }
 }

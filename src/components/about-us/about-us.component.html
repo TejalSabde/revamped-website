@@ -1,16 +1,28 @@
 <div id="about" class="about-section">
   <div class="about-inner">
-    <div class="about-left">
-      <p class="about-label">ABOUT US</p>
-      <h2>We Provide Best<br />Shawarma Experience</h2>
+    <div class="section-title about-left">
+
+      <div class="section-eyebrow">
+        <span></span>
+        Best Shawarma Experience
+        <span></span>
+      </div>
+
+      <h3>
+        About <strong>Us</strong>
+      </h3>
+
+      <div class="section-line"></div>
+
     </div>
 
+    <!-- <div class="about-left">
+      <p class="about-label">ABOUT US</p>
+      <h2>We Provide Best<br />Shawarma Experience</h2>
+    </div> -->
+
     <div class="diagonal-cards-wrapper">
-      <div
-        class="about-card card-1"
-        [class.featured]="selectedCard === 1"
-        (click)="selectCard(1)"
-      >
+      <div class="about-card card-1" [class.featured]="selectedCard === 1" (click)="selectCard(1)">
         <div class="card-icon">
           <i class="bi bi-shield-check"></i>
         </div>
@@ -18,11 +30,7 @@
         <p>Shawarmaji is a quick-service restaurant specializing in authentic Indo-Lebanese cuisine.</p>
       </div>
 
-      <div
-        class="about-card card-2"
-        [class.featured]="selectedCard === 2"
-        (click)="selectCard(2)"
-      >
+      <div class="about-card card-2" [class.featured]="selectedCard === 2" (click)="selectCard(2)">
         <div class="card-icon">
           <i class="bi bi-stars"></i>
         </div>
@@ -30,11 +38,7 @@
         <p>We serve signature shawarmas with fresh flavors, eye-catching branding, and affordable pricing.</p>
       </div>
 
-      <div
-        class="about-card card-3"
-        [class.featured]="selectedCard === 3"
-        (click)="selectCard(3)"
-      >
+      <div class="about-card card-3" [class.featured]="selectedCard === 3" (click)="selectCard(3)">
         <div class="card-icon">
           <i class="bi bi-award"></i>
         </div>
@@ -42,11 +46,7 @@
         <p>Shawarmaji is a licensed trademark owned and operated by PERPETUAL VISION LLP.</p>
       </div>
 
-      <div
-        class="about-card card-4"
-        [class.featured]="selectedCard === 4"
-        (click)="selectCard(4)"
-      >
+      <div class="about-card card-4" [class.featured]="selectedCard === 4" (click)="selectCard(4)">
         <div class="card-icon">
           <i class="bi bi-shop-window"></i>
         </div>
@@ -54,11 +54,7 @@
         <p>Delivering fresh and high-quality food through 30+ outlets in Mumbai, Thane, Navi Mumbai, and Pune.</p>
       </div>
 
-      <div
-        class="about-card card-5"
-        [class.featured]="selectedCard === 5"
-        (click)="selectCard(5)"
-      >
+      <div class="about-card card-5" [class.featured]="selectedCard === 5" (click)="selectCard(5)">
         <div class="card-icon">
           <i class="bi bi-lightning-charge"></i>
         </div>

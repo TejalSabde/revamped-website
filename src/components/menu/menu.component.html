@@ -1,66 +1,111 @@
-<div class="menu-container" id="menu">
+<section class="menu-container" id="menu">
+  <div class="section-title" *ngIf="isMobile">
 
+    <div class="section-eyebrow">
+      <span></span>
+      OUR MENU
+      <span></span>
+    </div>
+
+    <h3>
+      The <strong>Menu</strong>
+    </h3>
+
+    <div class="section-line"></div>
+
+  </div>
   <!-- LEFT SIDEBAR -->
-  <div class="menu-sidebar">
+  <aside class="menu-sidebar">
 
-    <h3 class="menu-title">MENU</h3>
 
-    <ul>
+
+    <ul class="menu-categories">
       <li *ngFor="let cat of categories" [class.active]="selectedCategory === cat" (click)="selectCategory(cat)">
-        {{ cat }}
+        <span class="category-name">
+          {{ cat }}
+        </span>
+
+        <span class="category-arrow">→</span>
       </li>
     </ul>
 
-  </div>
+  </aside>
 
 
   <!-- RIGHT CONTENT -->
-  <div class="menu-content">
+  <main class="menu-content">
 
-    <h2>{{ selectedCategory }}</h2>
+    <!-- HEADING + FILTERS -->
+    <div class="menu-heading">
 
-    <!-- VEG / NON-VEG FILTER -->
-    <div class="food-type-filter">
+      <div class="heading-content">
 
-      <button type="button" [class.active]="selectedFoodType === 'all'" (click)="selectFoodType('all')">
-        All
-      </button>
+        <span class="menu-eyebrow">
+          Our Signature Selection
+        </span>
 
-      <button type="button" [class.active]="selectedFoodType === 'veg'" (click)="selectFoodType('veg')">
-        <span class="food-type-icon veg-icon"></span>
-        Veg
-      </button>
+        <h2>
+          {{ selectedCategory }}
+        </h2>
 
-      <button type="button" [class.active]="selectedFoodType === 'non-veg'" (click)="selectFoodType('non-veg')">
-        <span class="food-type-icon nonveg-icon"></span>
-        Non-Veg
-      </button>
+        <div class="heading-line"></div>
+
+      </div>
+
+
+      <!-- VEG / NON VEG FILTER -->
+      <div class="food-type-filter">
+
+        <button type="button" [class.active]="selectedFoodType === 'all'" (click)="selectFoodType('all')">
+          All
+        </button>
+
+        <button type="button" [class.active]="selectedFoodType === 'veg'" (click)="selectFoodType('veg')">
+          <span class="food-type-icon veg-icon"></span>
+          Veg
+        </button>
+
+        <button type="button" [class.active]="selectedFoodType === 'non-veg'" (click)="selectFoodType('non-veg')">
+          <span class="food-type-icon nonveg-icon"></span>
+          Non-Veg
+        </button>
+
+      </div>
 
     </div>
 
 
-    <!-- BOOTSTRAP GRID -->
-    <div class="row g-3">
+    <!-- FOOD GRID -->
+    <div class="menu-grid">
 
-      <div class="col-6 col-md-4 col-lg-2" *ngFor="let item of filteredItems">
+      <div class="menu-item" *ngFor="let item of filteredItems">
 
-        <div class="menu-card">
+        <article class="menu-card">
 
+          <!-- IMAGE -->
           <div class="menu-image-wrapper">
 
-            <img [src]="item.image" [alt]="item.name" class="img-fluid" />
+            <img [src]="item.image" [alt]="item.name" loading="lazy" />
 
-            <!-- FOOD TYPE ICON -->
+            <!-- FOOD TYPE -->
             <span class="food-type-badge" [class.veg]="item.type === 'veg'" [class.nonveg]="item.type === 'non-veg'"
-              [attr.title]="item.type === 'veg' ? 'Vegetarian' : 'Non-Vegetarian'">
+              [attr.title]="
+                item.type === 'veg'
+                  ? 'Vegetarian'
+                  : 'Non-Vegetarian'
+              ">
               <span class="food-type-dot"></span>
             </span>
 
           </div>
 
+
+          <!-- CARD CONTENT -->
           <div class="menu-info">
 
-            <h4>{{ item.name }}</h4>
+            <h4>
+              {{ item.name }}
+            </h4>
 
             <p *ngIf="!isMobile">
               {{ item.desc }}
@@ -68,12 +113,12 @@
 
           </div>
 
-        </div>
+        </article>
 
       </div>
 
     </div>
 
-  </div>
+  </main>
 
-</div>
+</section>

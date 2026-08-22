@@ -30,9 +30,9 @@
 
 .about-left {
     position: absolute;
-    top: 60px;
+    top: 0px;
     /* controls vertical position */
-    left: 0;
+    left: 70%;
     /* align with card-1 start */
     max-width: 420px;
     z-index: 5;
@@ -120,7 +120,7 @@
 /* Card placements */
 .card-1 {
     top: 43%;
-    left: 0%;
+    left: 70%;
 }
 
 .card-2 {
@@ -130,7 +130,7 @@
 
 .card-3 {
     top: 3%;
-    left: 70%;
+    left: 0%;
 }
 
 .card-4 {
@@ -140,7 +140,7 @@
 
 .card-5 {
     top: 45%;
-    left: 70%;
+    left: 0%;
 }
 
 /* Tablet */
@@ -197,14 +197,12 @@
 
     .about-left {
         left: 16px;
-        position:relative;
-        max-width:100%;
-        margin-bottom:75px;
+        position: relative;
+        max-width: 100%;
+        margin-bottom: 75px;
     }
-
-    .about-left h2{
-        font-size:32px;
-        line-height:1.2;
+    .about-h2-mobile{
+        font-size: calc(1.325rem + .9vw);
     }
 
     .about-label {
@@ -218,18 +216,18 @@
         width: 100%;
         height: auto;
         transform-origin: top left;
-        transform:none;
+        transform: none;
     }
 
     .about-card {
         width: 55%;
         padding: 22px 18px;
         border-radius: 10% 0% 10% 0%;
-        position:relative;
-        width:100%;
-        left:auto !important;
-        top:auto !important;
-        margin-bottom:16px;
+        position: relative;
+        width: 100%;
+        left: auto !important;
+        top: auto !important;
+        margin-bottom: 16px;
     }
 
     .about-card h5 {
@@ -272,3 +270,4 @@
         left: 120%;
     }
 }
+
