@@ -17,11 +17,11 @@ export class HomeComponent {
     },
     {
       desktop: 'assets/img/food-pics/new-desktop-bg7.png',
-      mobile: 'assets/img/food-pics/new-mobile-bg4.png'
+      mobile: 'assets/img/food-pics/new-mobile-bg7.png'
     },
     {
       desktop: 'assets/img/food-pics/new-desktop-bg8.png',
-      mobile: 'assets/img/food-pics/new-mobile-bg5.png'
+      mobile: 'assets/img/food-pics/new-mobile-bg6.png'
     }
   ];
 
