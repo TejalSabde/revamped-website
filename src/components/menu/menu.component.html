@@ -78,7 +78,9 @@
     <!-- FOOD GRID -->
     <div class="menu-grid">
 
-      <div class="menu-item" *ngFor="let item of filteredItems">
+      <div #menuItem class="menu-item" *ngFor="let item of filteredItems; let itemIndex = index"
+        [class.menu-item-visible]="visibleItems.has(item.name)"
+        [style.--card-delay]="itemIndex * 70 + 'ms'">
 
         <article class="menu-card">
 

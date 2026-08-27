@@ -4,6 +4,7 @@ import {
   ElementRef,
   HostListener,
   OnInit,
+  OnDestroy,
   ViewChild
 } from '@angular/core';
 
@@ -19,7 +20,7 @@ import {
   templateUrl: './growth-story.component.html',
   styleUrls: ['./growth-story.component.css']
 })
-export class GrowthStoryComponent implements OnInit {
+export class GrowthStoryComponent implements OnInit, OnDestroy {
 
   isMobile = window.innerWidth <= 990;
   length: number = 0;
@@ -265,26 +266,44 @@ export class GrowthStoryComponent implements OnInit {
     ...puneLocations
   ];
   showGrowthTimeline = false;
+  isIntroVisible = false;
 
+  @ViewChild('growthIntro') growthIntro!: ElementRef<HTMLElement>;
   @ViewChild('path') animatedPath!: ElementRef;
   @ViewChild('transitionVideo') transitionVideo!: ElementRef<HTMLVideoElement>;
+  private introObserver?: IntersectionObserver;
 
 ngAfterViewInit(): void {
 
-  const video = this.transitionVideo.nativeElement;
+  if (this.transitionVideo) {
+    const video = this.transitionVideo.nativeElement;
 
-  // Explicitly set muted because some mobile browsers
-  // don't reliably interpret the HTML muted attribute.
-  video.muted = true;
-  video.defaultMuted = true;
+    // Explicitly set muted because some mobile browsers
+    // don't reliably interpret the HTML muted attribute.
+    video.muted = true;
+    video.defaultMuted = true;
 
-  video.play()
-    .then(() => {
-      console.log('Video started playing');
-    })
-    .catch(error => {
-      console.log('Autoplay blocked:', error);
-    });
+    video.play()
+      .then(() => {
+        console.log('Video started playing');
+      })
+      .catch(error => {
+        console.log('Autoplay blocked:', error);
+      });
+  }
+
+  this.introObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      this.isIntroVisible = true;
+      this.introObserver?.disconnect();
+    }
+  }, { threshold: 0.2 });
+
+  this.introObserver.observe(this.growthIntro.nativeElement);
+}
+
+ngOnDestroy(): void {
+  this.introObserver?.disconnect();
 }
 
   ngOnInit(): void {

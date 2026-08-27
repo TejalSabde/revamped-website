@@ -1,6 +1,6 @@
 .about-section {
     background: #f7f7f7;
-    padding: 80px 0;
+    padding: 80px 0 0 0;
     position: relative;
     overflow: hidden;
     min-height: 100vh;
@@ -75,6 +75,24 @@
     transition: 0.3s ease;
     border-radius: 10% 0% 10% 0%;
     width: 30%;
+    opacity: 0;
+    transform: translateX(35px);
+}
+
+.about-section-visible .about-card {
+    animation: about-card-reveal 0.6s ease-out var(--card-delay, 0ms) both;
+}
+
+@keyframes about-card-reveal {
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .about-card:hover {

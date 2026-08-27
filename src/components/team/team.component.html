@@ -1,7 +1,7 @@
-<div id="team" class="team section-bg">
+<div #teamSection id="team" class="team section-bg" [class.team-section-visible]="isSectionVisible">
     <!-- data-aos="fade-up" -->
     <div class="container">
-        <div class="section-title about-left">
+        <div class="section-title about-left pb-4">
 
             <div class="section-eyebrow">
                 <span></span>
@@ -24,7 +24,7 @@
         <div class="row">
             <!-- data-aos="zoom-in" data-aos-delay="100" -->
             <div class="col-lg-4">
-                <div class="member row justify-content-center d-flex"
+                <div class="member team-member-animated row justify-content-center d-flex" [style.--card-delay]="0 + 'ms'"
                     [ngClass]="{'ms-3 p-4': !isMobile, 'm-3 p-2' : isMobile}">
                     <div class="pic"><img src="assets/img/team/Pritish.png" class="img-fluid" alt=""></div>
                     <div class="member-info">
@@ -54,7 +54,7 @@
             </div>
             <!-- data-aos="zoom-in" data-aos-delay="200" -->
             <div class="col-lg-4 mt-4 mt-lg-0">
-                <div class="member row justify-content-center d-flex"
+                <div class="member team-member-animated row justify-content-center d-flex" [style.--card-delay]="100 + 'ms'"
                     [ngClass]="{'ms-3 p-4': !isMobile, 'm-3 p-2' : isMobile}">
                     <div class="pic"><img src="assets/img/team/Amey.png" class="img-fluid" alt=""></div>
                     <div class="member-info">
@@ -80,7 +80,7 @@
             </div>
             <!-- data-aos="zoom-in" data-aos-delay="200" -->
             <div class="col-lg-4 mt-4 mt-lg-0">
-                <div class="member row justify-content-center d-flex"
+                <div class="member team-member-animated row justify-content-center d-flex" [style.--card-delay]="200 + 'ms'"
                     [ngClass]="{'ms-3 p-4': !isMobile, 'm-3 p-2' : isMobile}">
                     <div class="pic"><img src="assets/img/team/Rajas.png" class="img-fluid" alt=""></div>
                     <div class="member-info">
@@ -112,7 +112,7 @@
                 <div class="col-lg-4 mt-4 mt-lg-0" *ngIf="!isMobile">
                 </div>
                 <div class="col-lg-4 mt-lg-0">
-                    <div class="member row justify-content-center d-flex ms-3"
+                    <div class="member team-member-animated row justify-content-center d-flex ms-3" [style.--card-delay]="300 + 'ms'"
                         [ngClass]="{'ms-3 p-4': !isMobile, 'm-3 p-2':isMobile}">
                         <div class="pic"><img src="assets/img/team/TTS.jpeg" class="img-fluid" alt=""></div>
                         <div class="member-info">

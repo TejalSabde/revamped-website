@@ -10,7 +10,20 @@ export class HomeComponent {
   heroScale = 1;
   heroOpacity = 1;
   mobileScale = 1;
-
+  heroImages = [
+    {
+      desktop: 'assets/img/food-pics/new-desktop-bg5.png',
+      mobile: 'assets/img/food-pics/new-mobile-bg3.png'
+    },
+    {
+      desktop: 'assets/img/food-pics/new-desktop-bg7.png',
+      mobile: 'assets/img/food-pics/new-mobile-bg4.png'
+    },
+    {
+      desktop: 'assets/img/food-pics/new-desktop-bg8.png',
+      mobile: 'assets/img/food-pics/new-mobile-bg5.png'
+    }
+  ];
 
   @HostListener('window:scroll', [])
   onScroll() {

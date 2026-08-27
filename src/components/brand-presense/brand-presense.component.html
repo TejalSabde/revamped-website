@@ -21,15 +21,25 @@
 
     <div class="search-box">
 
-      <i class="bi bi-search"></i>
+      <i class="search-icon bi bi-search"></i>
 
       <input type="text" placeholder="Search by city or outlet..." [(ngModel)]="searchText" (input)="filterLocations()">
+
+      <button type="button" class="btn-near-me" (click)="findLocationNearMe()" [disabled]="isFindingLocation">
+        <i class="bi bi-geo-alt-fill"></i>
+        <span>{{ isFindingLocation ? 'Finding location...' : 'Find location near me' }}</span>
+        <i class="bi bi-arrow-right"></i>
+      </button>
+
+      <p class="location-status" *ngIf="locationError" role="alert">{{ locationError }}</p>
 
     </div>
 
     <div class="outlet-grid">
 
-      <div class="outlet-card" *ngFor="let outlet of displayedLocations">
+      <div #outletCard class="outlet-card" *ngFor="let outlet of displayedLocations; let outletIndex = index"
+        [class.outlet-card-visible]="visibleOutlets.has(outlet.name)"
+        [style.--card-delay]="outletIndex * 70 + 'ms'">
 
         <div class="city-badge">
           {{outlet.city}}

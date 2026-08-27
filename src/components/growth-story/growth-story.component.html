@@ -4,7 +4,7 @@
        PREMIUM STORY INTRO
        ===================================================== -->
 
-  <div class="growth-intro">
+  <div #growthIntro class="growth-intro" [class.growth-intro-visible]="isIntroVisible">
     <div class="growth-intro-container" [ngClass]="{ 'grid-container': !isMobile }">
 
       <div class="section-title" *ngIf="isMobile">
@@ -230,7 +230,7 @@
 
           <div class="timeline-video-wrapper">
 
-            <video autoplay muted loop playsinline webkit-playsinline preload="auto">
+              <video #transitionVideo autoplay muted loop playsinline webkit-playsinline preload="auto">
 
               <source src="assets/img/transitionFinal.mp4" type="video/mp4">
 

@@ -618,3 +618,100 @@
     font-size: 14px;
   }
 }
+
+/* =========================
+   HERO SLIDER
+========================= */
+
+.hero-container,
+.mobile-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-slider {
+  width: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: 715px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Overlay content */
+.hero-content,
+.mobile-hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-content .hero-text,
+.mobile-hero-content .hero-text {
+  pointer-events: auto;
+}
+
+
+/* Smooth image transition */
+.carousel-item {
+  transition: transform 1s ease-in-out;
+}
+
+
+/* Dark overlay */
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+
+/* Indicators */
+.hero-slider .carousel-indicators {
+  z-index: 20;
+  bottom: 25px;
+}
+
+.hero-slider .carousel-indicators button {
+  width: 35px;
+  height: 4px;
+  margin: 0 5px;
+  border: 0;
+}
+
+
+/* Arrows */
+.hero-slider .carousel-control-prev,
+.hero-slider .carousel-control-next {
+  z-index: 20;
+  width: 7%;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero-image {
+    height: inherit;
+    object-fit: cover;
+  }
+
+  .hero-slider .carousel-indicators {
+    bottom: 15px;
+  }
+
+  .hero-slider .carousel-control-prev,
+  .hero-slider .carousel-control-next {
+    width: 12%;
+  }
+
+}

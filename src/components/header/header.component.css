@@ -178,6 +178,22 @@
   background: #00000066
 }
 
+.header-scrolled > div {
+  animation: header-menu-reveal 0.45s ease-out both;
+}
+
+@keyframes header-menu-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Default color (before scroll) */
 .navbar {
   color: #000;
@@ -211,15 +227,4 @@
 /* Dropdown icon */
 .navbar.scrolled .bi {
   color: #fff;
-}
-
-/* Active link */
-.navbar.scrolled .nav-link.active {
-  color: #f3b318;
-  /* brand gold */
-}
-
-.navbar a {
-  color: inherit;
-  transition: color 0.3s ease;
 }

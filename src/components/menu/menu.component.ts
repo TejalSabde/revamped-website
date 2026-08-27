@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, QueryList, ViewChildren } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 const menuItems = [
 
@@ -261,7 +262,14 @@ const menuItems = [
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent {
+export class MenuComponent implements AfterViewInit, OnDestroy {
+
+  @ViewChildren('menuItem') menuItems!: QueryList<ElementRef<HTMLElement>>;
+
+  visibleItems = new Set<string>();
+
+  private menuItemsObserver?: IntersectionObserver;
+  private menuItemsChangeSubscription?: Subscription;
 
   isMobile = window.innerWidth <= 990;
 
@@ -277,6 +285,33 @@ export class MenuComponent {
   selectedCategory: string = 'Shawarmas';
 
   selectedFoodType: string = 'all';
+
+  ngAfterViewInit(): void {
+    this.observeMenuItems();
+    this.menuItemsChangeSubscription = this.menuItems.changes.subscribe(() => this.observeMenuItems());
+  }
+
+  ngOnDestroy(): void {
+    this.menuItemsObserver?.disconnect();
+    this.menuItemsChangeSubscription?.unsubscribe();
+  }
+
+  private observeMenuItems(): void {
+    this.menuItemsObserver?.disconnect();
+    this.menuItemsObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const itemName = entry.target.querySelector('h4')?.textContent?.trim();
+          if (itemName) {
+            this.visibleItems.add(itemName);
+          }
+          this.menuItemsObserver?.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    this.menuItems.forEach(item => this.menuItemsObserver?.observe(item.nativeElement));
+  }
 
   get filteredItems() {
 

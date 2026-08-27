@@ -181,6 +181,27 @@
   align-items: center;
 }
 
+.growth-visual,
+.growth-story-content {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.growth-visual {
+  transform: translateX(-45px);
+}
+
+.growth-story-content {
+  transform: translateX(45px);
+  transition-delay: 0.12s;
+}
+
+.growth-intro-visible .growth-visual,
+.growth-intro-visible .growth-story-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 /* Description */
 

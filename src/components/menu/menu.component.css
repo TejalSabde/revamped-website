@@ -365,6 +365,25 @@
 .menu-item {
   width: 100%;
   min-width: 0;
+
+  opacity: 0;
+  transform: translateX(28px);
+}
+
+.menu-item-visible {
+  animation: menu-card-reveal 0.55s ease-out var(--card-delay, 0ms) both;
+}
+
+@keyframes menu-card-reveal {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 
